@@ -1,0 +1,133 @@
+/* main.css — базовая верстка, адаптация под телефон */
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #020617;
+  color: #e5e7eb;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+header {
+  padding: 16px;
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #1e293b;
+}
+
+#balance {
+  font-weight: 700;
+}
+
+.slider {
+  display: flex;
+  gap: 14px;
+  padding: 16px;
+  overflow-x: auto;
+}
+
+.card {
+  min-width: 220px;
+  height: 120px;
+  border-radius: 20px;
+  padding: 16px;
+  background: linear-gradient(135deg, #1e293b, #020617);
+  flex-shrink: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card h3 {
+  font-size: 15px;
+  color: #94a3b8;
+}
+
+.card .sum {
+  margin-top: 10px;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.income { color: #22c55e; }
+.spent  { color: #f59e0b; }
+.debt   { color: #ef4444; }
+
+.add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  color: #60a5fa;
+}
+
+.full {
+  position: fixed;
+  inset: 0;
+  background: #020617;
+  display: none;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.full.active { display: flex; }
+
+.top {
+  padding: 14px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #1e293b;
+}
+
+.content {
+  padding: 16px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  border: none;
+  background: #0f172a;
+  color: #fff;
+}
+
+button {
+  background: #2563eb;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+ul { list-style: none; padding: 0; }
+
+li {
+  padding: 10px;
+  background: #0f172a;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.quick-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.quick-buttons button {
+  flex: 1;
+  background-color: #2563eb;
+}
