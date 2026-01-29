@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💳 Мой Финансовый Контроль</title>
+
+<!-- PWA -->
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+<meta name="theme-color" content="#020617">
+
+<!-- CSS -->
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/themes.css">
+<link rel="stylesheet" href="css/animations.css">
+
+</head>
+<body>
+
+<header>
+  <h1>💳 Мой Финансовый Контроль</h1>
+  <div id="balance">Баланс: 0 ₸</div>
+</header>
+
+<!-- Горизонтальная лента категорий -->
+<div class="slider" id="categoriesSlider"></div>
+
+<!-- Модальное окно для операций -->
+<div class="full" id="modal">
+  <div class="top">
+    <b id="modalTitle"></b>
+    <span onclick="ui.closeModal()">✕</span>
+  </div>
+  <div class="content">
+    <div class="month-filter">
+      <select id="monthFilter" onchange="filters.filterByMonth(this.value)">
+        <option value="all">Все месяцы</option>
+      </select>
+    </div>
+
+    <input id="amount" type="number" placeholder="Сумма">
+    <input id="comment" placeholder="Комментарий">
+    <div class="quick-buttons">
+      <button onclick="records.quickAdd(1000)">+1000</button>
+      <button onclick="records.quickAdd(5000)">+5000</button>
+    </div>
+    <button onclick="records.add()">Добавить</button>
+
+    <input id="searchInput" type="text" placeholder="Поиск..." oninput="filters.search(this.value)">
+    <select id="sortSelect" onchange="filters.sort(this.value)">
+      <option value="newest">Сначала новые</option>
+      <option value="oldest">Сначала старые</option>
+    </select>
+
+    <ul id="recordsList"></ul>
+
+    <button onclick="exportData.exportJSON()">Экспорт JSON</button>
+  </div>
+</div>
+
+<!-- Модальное окно для PIN -->
+<div class="full" id="pinModal">
+  <div class="top"><b>Введите PIN</b></div>
+  <div class="content">
+    <input id="pinInput" type="password" placeholder="PIN">
+    <button onclick="auth.checkPin()">Войти</button>
+  </div>
+</div>
+
+<!-- Модальное окно для создания категории -->
+<div class="full" id="createCategoryModal">
+  <div class="top"><b>Новая категория</b> <span onclick="ui.closeCreate()">✕</span></div>
+  <div class="content">
+    <input id="newCategoryName" placeholder="Название категории">
+    <select id="newCategoryType">
+      <option value="income">Доход</option>
+      <option value="spent">Расход</option>
+      <option value="debt">Долг</option>
+    </select>
+    <input type="color" id="newCategoryColor" value="#60a5fa">
+    <button onclick="categories.create()">Создать категорию</button>
+  </div>
+</div>
+
+<!-- JS -->
+<script src="js/storage.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/categories.js"></script>
+<script src="js/records.js"></script>
+<script src="js/balance.js"></script>
+<script src="js/filters.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/export.js"></script>
+<script src="js/analytics.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
