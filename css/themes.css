@@ -1,0 +1,29 @@
+/* themes.css — темы и кастомные цвета */
+body.light {
+  background-color: #f9fafb;
+  color: #111827;
+}
+
+body.light .card {
+  background: linear-gradient(135deg, #e5e7eb, #f3f4f6);
+  color: #111827;
+}
+
+body.light input, body.light select, body.light button {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+body.dark {
+  background-color: #020617;
+  color: #e5e7eb;
+}
+
+body.dark .card {
+  background: linear-gradient(135deg, #1e293b, #020617);
+}
+
+body.dark input, body.dark select, body.dark button {
+  background: #0f172a;
+  color: #fff;
+}
